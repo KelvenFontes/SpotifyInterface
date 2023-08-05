@@ -1,5 +1,7 @@
-import { Home as HomeIcon, Search, Library, ChevronLeft, ChevronRight, Play, Shuffle, SkipBack, SkipForward, Repeat, Laptop2, Mic2, LayoutList, Volume, Maximize2 } from "lucide-react";
+import { ChevronLeft, ChevronRight, Play,  } from "lucide-react";
 import Image from "next/image";
+import { Footer } from "./Components/Footer";
+import { Sidebar } from "./Components/Sidebar";
 
 export default function Home() {
   return (
@@ -7,23 +9,7 @@ export default function Home() {
 
       <div className="flex flex-1 pl-2 pr-2 gap-2 m-2">
 
-        <aside className="w-72 rounded-lg">
-
-          <nav className="space-y-5 bg-zinc-900 p-4 rounded-lg">
-            <a href="" className="flex items-center gap-3 text-xs font-semibold text-zinc-200 hover:text-zinc-100"><HomeIcon />Home</a>
-            <a href="" className="flex items-center gap-3 text-xs font-semibold text-zinc-200 hover:text-zinc-100"><Search />Search</a>
-            <a href="" className="flex items-center gap-3 text-xs font-semibold text-zinc-200 hover:text-zinc-100"><Library />Your Library</a>
-          </nav>
-
-          <nav className="mt-2 p-4 bg-zinc-900 flex flex-col gap-3 rounded-lg h-[426px]">
-            <a href="" className="text-sm text-zinc-400 hover:text-zinc-100">Aniversário</a>
-            <a href="" className="text-sm text-zinc-400 hover:text-zinc-100">Hot Hits Brasil</a>
-            <a href="" className="text-sm text-zinc-400 hover:text-zinc-100">Top Brasil</a>
-            <a href="" className="text-sm text-zinc-400 hover:text-zinc-100">My Playlist #1</a>
-            <a href="" className="text-sm text-zinc-400 hover:text-zinc-100">My Playlist #2</a>
-          </nav>
-
-        </aside>
+        <Sidebar />
 
         <main className="flex-1 bg-zinc-900 p-6 rounded-lg h-[578px] overflow-y-auto appearance-none">
           <div className="flex items-center gap-2">
@@ -99,50 +85,8 @@ export default function Home() {
         </main>
       </div >
 
-      <footer className="p-4 bg-zinc-950 flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <Image src="/album3.png" className="w-full rounded-lg" width={48} height={48} alt="Capa do album" />
-          <div className="flex flex-col">
-            <strong className="font-normal">Rope</strong>
-            <span className="text-xs text-zinc-400">Foo Fighthervfvdsfvfsdvdsvdfsvsvvd</span>
-          </div>
-        </div>
+      <Footer />
 
-        <div className="flex flex-col items-center gap-2">
-          <div className="flex items-center gap-4">
-            <Shuffle size={20} className="text-zinc-200" />
-            <SkipBack size={20} className="text-zinc-200" />
-
-            <button className="w-10 h-10 flex items-center justify-center pl-1 rounded-full bg-white text-black"><Play /></button>
-
-            <SkipForward size={20} className="text-zinc-200" />
-            <Repeat size={20} className="text-zinc-200" />
-          </div>
-
-          <div className="flex items-center gap-2">
-            <span className="text-xs text-zinc-500">0:42</span>
-            <div className="h-1 rounded-full w-96 bg-zinc-600">
-              <div className="bg-zinc-200 w-40 h-1 rounded-full"></div>
-            </div>
-            <span className="text-xs text-zinc-500">3:22</span>
-          </div>
-        </div>
-
-        <div className="flex items-center gap-2">
-          <LayoutList size={20} />
-          <Mic2 size={20} />
-          <Laptop2 size={20} />
-          <div className="flex items-center gap-2">
-            <Volume size={20} />
-            <div className="h-1 rounded-full w-24 bg-zinc-600">
-              <div className="h-1 rounded-full w-10 bg-zinc-200"></div>
-            </div>
-
-          </div>
-          <Maximize2 size={20} />
-        </div>
-
-      </footer>
     </div >
   )
 }
